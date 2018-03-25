@@ -3,8 +3,9 @@ import pytest
 
 import simple_df
 
-only_pandas = True
-DATA_FRAMES = [pandas.DataFrame] if only_pandas else [pandas.DataFrame, simple_df.SimpleDataFrame]
+test_simple_df = False  # CHANGE ME
+
+DATA_FRAMES = [pandas.DataFrame, simple_df.SimpleDataFrame] if test_simple_df else [pandas.DataFrame]
 
 
 def transform_nan_to_str(val):
@@ -27,4 +28,3 @@ def dataset_2():
         'B': [10, 20, 30, 40, 50],
         'E': 88
     }
-
